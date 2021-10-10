@@ -1,0 +1,59 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Signup</title>
+	<style>
+	body
+	{
+		background:#9C835F;
+		font-family:arial;
+		color:#F9B23D;
+		padding-top:150px;
+		text-align:center;
+	}
+	h1
+	{
+		font-size:36px;
+		line-height:100px;
+		margin-bottom:30px;
+	}
+	form
+	{
+		width:100%;
+		max-width:200px;
+		margin:0 auto;
+	}
+	input
+	{
+		display:block;
+		width:100%;
+		padding:10px 20px;
+	}
+	.btnsubmit
+	{
+		cursor:pointer;
+		background:#F9B23D;
+		color:white;
+		border:none;
+		font-size:22px;
+	}
+	#message
+	{
+		color:red;
+		padding-bottom:10px;
+	}
+	</style>
+</head>
+<body>
+	<h1>ROCK PAPER SCISSORS<br>Signup</h1>
+	<div id="message"><%- msg %></div>
+	<form action="/signup-post" method="POST">
+		<input name="username" type="text" placeholder="Username">
+		<br>
+		<input name="password" type="password" placeholder="Password">
+		<br>
+		<input class="btnsubmit" name="submit" type="submit" value="Signup">
+	</form>
+</body>
+</html>

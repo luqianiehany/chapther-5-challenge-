@@ -18,6 +18,20 @@ router.get('/login', function(req, res){
 	})
 })
 
+router.get('/signup', function(req, res){
+	const stat = req.query.stat || ''
+	var msg = ''
+	if(stat == 1)
+		msg = "<span style='color:#F9B23D;'>Thank you for signing up, please login <a href='/login'>here</a></span><style>form {display:none;}</style>"
+	else if(stat == 2)
+		msg = "You already have an account, please login <a href='/login'>here</a>"
+	else if(stat == 3)
+		msg = "Please fill up the form"
+	res.render('signup', {
+		msg
+	})
+})
+
 router.get('/json', (req, res) => {
 	const json = fs.readFileSync("./db/users.json")
 	res.send(JSON.parse(json.toString()))
